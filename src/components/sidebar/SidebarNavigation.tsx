@@ -1,16 +1,30 @@
+
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
 import SidebarSection from "./SidebarSection";
 import UserProfile from "./UserProfile";
 
 const SidebarNavigation: React.FC = () => {
+  const location = useLocation();
+
   return (
     <div className="w-full flex-1 mt-3">
-      <SidebarItem
-        icon="https://cdn.builder.io/api/v1/image/assets/TEMP/0e8cfb480bc330ff2ad6c2b651bc5699323c4b68?placeholderIfAbsent=true"
-        label="Home"
-        active={true}
-      />
+      <Link to="/">
+        <SidebarItem
+          icon="https://cdn.builder.io/api/v1/image/assets/TEMP/0e8cfb480bc330ff2ad6c2b651bc5699323c4b68?placeholderIfAbsent=true"
+          label="Home"
+          active={location.pathname === '/'}
+        />
+      </Link>
+
+      <Link to="/analytics">
+        <SidebarItem
+          icon="https://cdn.builder.io/api/v1/image/assets/TEMP/ee4f4cb8d1ce63133791c4d18dbb78b3b7aaeba0?placeholderIfAbsent=true"
+          label="Analytics"
+          active={location.pathname === '/analytics'}
+        />
+      </Link>
 
       <div className="w-full flex-1 mt-3">
         <div className="w-full">
