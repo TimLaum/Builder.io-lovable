@@ -10,7 +10,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div className={`${isOpen ? 'translate-x-0' : '-translate-x-[280px]'} fixed left-0 w-[280px] transition-transform duration-300 max-[1024px]:top-0 max-[1024px]:h-screen max-[1024px]:z-50`}>
-      <div className="bg-white shadow-[0px_1px_2px_rgba(95,74,46,0.08)] relative w-[280px] h-full px-3 py-5">
+      <div className="bg-white overflow-y-scroll shadow-[0px_1px_2px_rgba(95,74,46,0.08)] relative w-[280px] h-full px-3 py-5">
         <div className="z-0 flex w-full flex-col overflow-hidden items-stretch justify-center flex-1">
           <SidebarHeader />
           <div className="w-full flex-1 mt-5">
