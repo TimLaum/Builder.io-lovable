@@ -9,8 +9,8 @@ const Sidebar: React.FC = () => {
   const { isOpen, toggle } = useSidebar();
 
   return (
-    <div className={`${isOpen ? 'w-[280px]' : 'w-0'} overflow-hidden transition-all duration-300 max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:h-screen max-lg:z-50 relative`}>
-      <div className="bg-white shadow-[0px_1px_2px_rgba(95,74,46,0.08)] relative grow w-[280px] h-full px-3 py-5">
+    <div className={`${isOpen ? 'translate-x-0' : '-translate-x-[280px]'} fixed left-0 w-[280px] transition-transform duration-300 max-[1024px]:top-0 max-[1024px]:h-screen max-[1024px]:z-50`}>
+      <div className="bg-white shadow-[0px_1px_2px_rgba(95,74,46,0.08)] relative w-[280px] h-full px-3 py-5">
         <div className="z-0 flex w-full flex-col overflow-hidden items-stretch justify-center flex-1">
           <SidebarHeader />
           <div className="w-full flex-1 mt-5">
@@ -21,8 +21,7 @@ const Sidebar: React.FC = () => {
       </div>
       <button 
         onClick={toggle}
-        className="absolute z-10 top-5 right-[-12px] w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-md hover:shadow-lg transition-shadow"
-        style={{ transform: isOpen ? 'translateX(0)' : 'translateX(18px)' }}
+        className="absolute z-10 top-5 right-[-18px] w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-md hover:shadow-lg transition-shadow"
       >
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/a108f9e4b68b386cde9aebd142750e6251631f3f?placeholderIfAbsent=true"
