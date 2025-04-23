@@ -1,10 +1,11 @@
+
 import React from "react";
 import ActivityCard from "./ActivityCard";
 
 const LatestActivity: React.FC = () => {
   const activities = [
     {
-      type: "creative",
+      type: "creative" as const,
       title: "Top creative",
       subtitle: "13 ads reviewed",
       time: "24 min ago",
@@ -22,7 +23,7 @@ const LatestActivity: React.FC = () => {
       hasButton: true,
     },
     {
-      type: "reports",
+      type: "reports" as const,
       title: "Weekly reports",
       subtitle: "5 reports available",
       time: "51 min ago",
@@ -38,7 +39,7 @@ const LatestActivity: React.FC = () => {
       ],
     },
     {
-      type: "chart",
+      type: "chart" as const,
       title: "Top performing",
       subtitle: "28 ads reviewed",
       time: "2 hours ago",
@@ -52,7 +53,7 @@ const LatestActivity: React.FC = () => {
         "https://cdn.builder.io/api/v1/image/assets/TEMP/aeed88819f3f5e32bc5b956a3b48658ec3940489?placeholderIfAbsent=true",
     },
     {
-      type: "chart",
+      type: "chart" as const,
       title: "Top campaigns",
       subtitle: "7 ads reviewed",
       time: "5 hours ago",
