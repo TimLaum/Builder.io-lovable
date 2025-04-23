@@ -1,15 +1,19 @@
+
 import React from "react";
+import { SidebarProvider } from "../contexts/SidebarContext";
 import Sidebar from "../components/layout/Sidebar";
 import MainContent from "../components/layout/MainContent";
 
 const Index: React.FC = () => {
   return (
-    <div className="bg-[#EDF3FF]">
-      <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
-        <Sidebar />
-        <MainContent />
+    <SidebarProvider>
+      <div className="bg-[#EDF3FF]">
+        <div className="flex max-lg:flex-col max-lg:items-stretch">
+          <Sidebar />
+          <MainContent />
+        </div>
       </div>
-    </div>
+    </SidebarProvider>
   );
 };
 
