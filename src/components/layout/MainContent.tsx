@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "../dashboard/Header";
 import QuickActions from "../dashboard/QuickActions";
@@ -17,10 +18,13 @@ const MainContent: React.FC = () => {
             <DiscoverSection />
           </div>
         </div>
-        <FloatingButton />
+        <div className="flex justify-end pr-6 -mt-20">
+          <FloatingButton />
+        </div>
       </div>
     </div>
   );
 };
 
 export default MainContent;
+
