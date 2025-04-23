@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
   const { isOpen, toggle } = useSidebar();
 
   return (
-    <div className={`${isOpen ? 'w-[280px]' : 'w-0'} overflow-hidden transition-all duration-300 max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:h-screen max-lg:z-50`}>
+    <div className={`${isOpen ? 'w-[280px]' : 'w-0'} overflow-hidden transition-all duration-300 max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:h-screen max-lg:z-50 relative`}>
       <div className="bg-white shadow-[0px_1px_2px_rgba(95,74,46,0.08)] relative grow w-[280px] h-full px-3 py-5">
         <div className="z-0 flex w-full flex-col overflow-hidden items-stretch justify-center flex-1">
           <SidebarHeader />
@@ -18,17 +18,18 @@ const Sidebar: React.FC = () => {
             <SidebarNavigation />
           </div>
         </div>
-        <button 
-          onClick={toggle}
-          className="absolute z-10 top-5 -right-3 w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-sm hover:shadow-md transition-shadow"
-        >
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/a108f9e4b68b386cde9aebd142750e6251631f3f?placeholderIfAbsent=true"
-            className="w-4 h-4 object-contain"
-            alt="Toggle sidebar"
-          />
-        </button>
       </div>
+      <button 
+        onClick={toggle}
+        className="absolute z-10 top-5 right-[-12px] w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-md hover:shadow-lg transition-shadow"
+        style={{ transform: isOpen ? 'translateX(0)' : 'translateX(18px)' }}
+      >
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a108f9e4b68b386cde9aebd142750e6251631f3f?placeholderIfAbsent=true"
+          className={`w-4 h-4 object-contain ${isOpen ? '' : 'transform rotate-180'}`}
+          alt="Toggle sidebar"
+        />
+      </button>
     </div>
   );
 };

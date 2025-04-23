@@ -8,7 +8,7 @@ const Index: React.FC = () => {
   return (
     <SidebarProvider>
       <div className="bg-[#EDF3FF]">
-        <div className="flex max-lg:flex-col max-lg:items-stretch">
+        <div className="flex max-[1024px]:flex-col max-[1024px]:items-stretch">
           <Sidebar />
           <MainContent />
         </div>
