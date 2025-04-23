@@ -1,8 +1,8 @@
 import React from "react";
-import Sidebar from "../components/layout/Sidebar";
-import MainContent from "../components/layout/MainContent";
+import Sidebar from "./layout/Sidebar";
+import MainContent from "./layout/MainContent";
 
-const Index: React.FC = () => {
+const Homepage: React.FC = () => {
   return (
     <div className="bg-[#EDF3FF]">
       <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
@@ -13,4 +13,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default Index;
+export default Homepage;
