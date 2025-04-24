@@ -44,13 +44,16 @@ const SidebarNavigation: React.FC = () => {
               label="Top creative"
               indented={true}
             />
+            <Link to="/creative-fatigue">
+              <SidebarItem
+                icon="https://cdn.builder.io/api/v1/image/assets/TEMP/9c2f02816f11d4fe6a0951fd0bc056bd716428b1?placeholderIfAbsent=true"
+                label="Creative fatigue"
+                indented={true}
+                active={location.pathname === '/creative-fatigue'}
+              />
+            </Link>
             <SidebarItem
               icon="https://cdn.builder.io/api/v1/image/assets/TEMP/12d7b10b20afcda32eab386fa8b54ab4d3a88580?placeholderIfAbsent=true"
-              label="Other reports"
-              indented={true}
-            />
-            <SidebarItem
-              icon="https://cdn.builder.io/api/v1/image/assets/TEMP/9c2f02816f11d4fe6a0951fd0bc056bd716428b1?placeholderIfAbsent=true"
               label="Other reports"
               indented={true}
             />

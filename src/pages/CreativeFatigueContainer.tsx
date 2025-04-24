@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useSidebar } from "../contexts/SidebarContext";
 import {
@@ -137,21 +138,32 @@ const CreativeFatigueContainer: React.FC = () => {
   };
 
   return (
-    <div className={`${isOpen ? 'ml-[280px]' : 'ml-0'} flex-1 transition-all duration-300 max-lg:w-full max-lg:ml-0`}>
+    <div 
+      className={`${
+        isOpen ? 'ml-[280px]' : 'ml-0'
+      } flex-1 transition-all duration-300 max-lg:w-full max-lg:ml-0`}
+    >
       <div className="p-8 bg-[#f7f7f7] min-h-screen max-sm:p-4">
-        <div className="space-y-6">
+        <div className="space-y-6 max-w-full">
           <CreativeFatigueHeader
             title="Creative fatigue"
             description="Add description..."
             isPublished={false}
           />
+          
           <CreativeFatigueFilters dateRange={dateRange} groupBy={groupBy} />
-          <div className="grid grid-cols-1 gap-4 max-md:overflow-x-auto">
-            <CategoryCards categories={categories} />
+          
+          <div className="w-full overflow-x-auto">
+            <div className="min-w-[900px] lg:min-w-0">
+              <CategoryCards categories={categories} />
+            </div>
           </div>
-          <div className="bg-white rounded-lg overflow-hidden max-md:overflow-x-auto">
-            <CreativesTable creatives={creatives} />
-            <div className="px-4 max-sm:px-2">
+          
+          <div className="bg-white rounded-lg overflow-hidden w-full">
+            <div className="overflow-x-auto">
+              <CreativesTable creatives={creatives} />
+            </div>
+            <div className="px-4 py-2">
               <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 
@@ -15,7 +16,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   color,
 }) => {
   return (
-    <div className="flex flex-col gap-2 p-3 border border-[#e2e8f0] rounded-lg flex-1">
+    <div className="flex flex-col gap-2 p-3 border border-[#e2e8f0] rounded-lg flex-1 bg-white">
       <div className="flex items-center gap-2">
         <div
           className="w-4 h-4 rounded-full"
@@ -40,7 +41,7 @@ interface CategoryCardsProps {
 
 const CategoryCards: React.FC<CategoryCardsProps> = ({ categories }) => {
   return (
-    <div className="flex gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
       {categories.map((category, index) => (
         <CategoryCard
           key={index}
