@@ -1,5 +1,5 @@
+
 import React, { useState } from "react";
-import CreativeFatigue from "./CreativeFatigue";
 import {
   CreativeFatigueHeader,
   CreativeFatigueFilters,
@@ -134,7 +134,31 @@ const CreativeFatigueContainer: React.FC = () => {
     // Here you would typically fetch data for the new page
   };
 
-  return <CreativeFatigue />;
+  return (
+    <div className="p-8 bg-[#f7f7f7] min-h-screen">
+      <div className="space-y-6">
+        <CreativeFatigueHeader
+          title="Creative fatigue"
+          description="Add description..."
+          isPublished={false}
+        />
+        <CreativeFatigueFilters dateRange={dateRange} groupBy={groupBy} />
+        <CategoryCards categories={categories} />
+        <div className="bg-white rounded-lg overflow-hidden">
+          <CreativesTable creatives={creatives} />
+          <div className="px-4">
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              totalResults={totalResults}
+              resultsPerPage={resultsPerPage}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CreativeFatigueContainer;
